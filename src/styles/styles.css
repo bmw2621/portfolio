@@ -1,0 +1,27 @@
+#gameOfLife {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  position: absolute;
+  width: 100vw;
+  height: 25vh;
+  background-color: navy;
+}
+/*# sourceMappingURL=styles.css.map */
