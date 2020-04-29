@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TitleText = () => {
-    const d = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    const d = Math.max( window.innerWidth || 0)
     const d_string = `M 0,0 C 0,175 ${d},175 ${d},0`
     return (
     <svg id="titleText">
