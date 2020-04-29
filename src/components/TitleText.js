@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 
 const TitleText = () => {
-    const d = Math.max( window.innerWidth || 0)
-    const d_string = `M 0,0 C 0,175 ${d},175 ${d},0`
+
     return (
     <svg id="titleText">
         <circle id="curve" cx="50%" cy="50%" r="50%" stroke="black" stroke-width="3" fill="red"></circle>
