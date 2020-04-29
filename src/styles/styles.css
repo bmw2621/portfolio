@@ -1,9 +1,14 @@
+/* HSL */
+/* RGB */
+/* HEX */
+/* GRADIENT */
 #gameOfLife {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 html {
@@ -19,9 +24,42 @@ body {
 }
 
 header {
+  width: 100%;
+  height: 75vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+}
+
+main {
+  background-color: linear-gradient(0deg, #e1b382ff, #c89666ff);
+}
+
+.portrait {
+  width: 50vw;
+  max-width: 440px;
+  height: auto;
   position: absolute;
-  width: 100vw;
-  height: 25vh;
-  background-color: navy;
+  top: 5vh;
+  left: calc(50vw - min(25vw,220px));
+  margin-top: 0;
+  z-index: 10;
+  border-radius: 100vw;
+}
+
+text {
+  fill: black;
+  font-size: 75px;
+}
+
+#titleText {
+  width: 50vw;
+  max-width: 440px;
+  height: 50vw;
+  max-height: 440px;
+  position: absolute;
+  top: 5vh;
+  left: calc(50vw - min(25vw,220px));
+  margin-top: 0;
+  z-index: 5;
 }
 /*# sourceMappingURL=styles.css.map */
