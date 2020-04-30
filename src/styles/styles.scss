@@ -1,16 +1,4 @@
-/* HSL */
-$color1: hsla(31%, 42%, 88%, 1);
-$color2: hsla(29%, 49%, 78%, 1);
-$color3: hsla(192%, 52%, 37%, 1);
-$color4: hsla(190%, 69%, 23%, 1);
-$color5: hsla(0%, 0%, 98%, 1);
-
-/* RGB */
-$color1: rgba(225, 179, 130, 1);
-$color2: rgba(200, 150, 102, 1);
-$color3: rgba(45, 84, 94, 1);
-$color4: rgba(18, 52, 59, 1);
-$color5: rgba(251, 251, 251, 1);
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
 /* HEX */
 $color1: #e1b382ff;
@@ -19,18 +7,11 @@ $color3: #2d545eff;
 $color4: #12343bff;
 $color5: #fbfbfbff;
 
-/* GRADIENT */
-$gradient-top: linear-gradient(0deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-right: linear-gradient(90deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-bottom: linear-gradient(180deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-left: linear-gradient(270deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-top-right: linear-gradient(45deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-bottom-right: linear-gradient(135deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-top-left: linear-gradient(225deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-bottom-left: linear-gradient(315deg, #e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-$gradient-radial: radial-gradient(#e1b382ff, #c89666ff, #2d545eff, #12343bff, #fbfbfbff);
-
 $gradient-sand: linear-gradient(0deg, $color1, $color2);
+
+body {
+  font-family: 'Fira Code';
+}
 
 #gameOfLife{
   position: absolute;
@@ -53,12 +34,23 @@ body {
 
 header {
   width: 100%;
-  height: 75vh;
+  height: 65vw;
+  max-height: 650px;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  // @media only screen and (max-width: 600px) {
+  //   height: 50vh;
+  // }
 }
 
 main {
-  background-color: $gradient-sand;
+  
+  &>*{
+    max-width: 1120px;
+    margin: 0 10px;
+    @media only screen and (min-width: 1120px){
+      margin-left: calc(50vw - 560px);
+    }
+  }
 }
 
 .portrait {
@@ -66,11 +58,10 @@ main {
   max-width: 440px;
   height: auto;
   position: absolute;
-  top: 5vh;
+  top: 3vw;
   left: calc(50vw - min(25vw,220px));
   margin-top: 0;
   z-index: 10;
-  border-radius: 100vw;
 }
 
 
@@ -91,4 +82,55 @@ text {
   left: calc(50vw - min(25vw,220px));
   margin-top: 0;
   z-index: 5;
+}
+
+#text1122 {
+  font-style:normal;
+  font-weight:normal;
+  font-size:40.00000763px;
+  line-height:1.25;
+  font-family:sans-serif;
+  text-align:center;
+  letter-spacing:0px;
+  word-spacing:0px;
+  text-anchor:middle;
+  fill:#000000;
+  fill-opacity:1;
+  stroke:none;
+  stroke-width:1.00078964;
+  transform: rotate(-100deg);
+  transform-origin: center;
+  animation-name: titleNameRotation;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  &>* {
+   opacity: 0;
+   animation-name: titleNameFadeIn;
+   animation-duration: 2s;
+   animation-timing-function: ease-out;
+   animation-delay: 1s;
+   animation-iteration-count: 1; 
+   animation-fill-mode: forwards;
+  }
+}
+
+footer {
+  color: $color5;
+  background: $color4;
+  ul {
+    list-style: none;
+  }
+}
+
+@keyframes titleNameRotation {
+  from{transform: rotate(-100deg);}
+  to{transform: rotate(0deg);}
+}
+
+@keyframes titleNameFadeIn {
+  from{opacity: 0;}
+  to{opacity: 1;}
 }

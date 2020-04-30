@@ -10,8 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "../styles/styles.css"
-import Image from "./Image"
-import TitleText from "./TitleText"
+import Logo from "../images/me2.svg"
 
 const getPixelRatio = context => {
     var backingStore =
@@ -151,15 +150,16 @@ const Layout = ({ children }) => {
             id="gameOfLife"
             ref={canvasRef}
           ></canvas> 
-        
-        <Image className="portrait"/> 
-        <TitleText />
-        
-
-
-
+          <Logo className="portrait" />
       </header>
-      <main>{data.site.siteMetadata.title}</main>
+      <main>{children}</main>
+      <footer>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Github</li>
+        </ul>
+      </footer>
     </>
   )
 }
