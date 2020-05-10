@@ -129,6 +129,52 @@ footer ul {
   list-style: none;
 }
 
+#navToggle {
+  color: #fbfbfbff;
+  font-size: 10vw;
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+nav > ul > li {
+  color: #fbfbfbff;
+  font-size: 50px;
+  text-align: center;
+  background-color: #12343bff;
+  border: 1px solid #fbfbfbff;
+  width: 250px;
+}
+
+nav > ul > li::hover {
+  text-decoration: underline;
+}
+
+#navMenu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  top: 50vw;
+}
+
+@media only screen and (min-width: 1020px) {
+  #navMenu {
+    top: 510px;
+  }
+}
+
 @-webkit-keyframes titleNameRotation {
   from {
     -webkit-transform: rotate(-100deg);

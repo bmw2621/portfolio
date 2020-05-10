@@ -142,6 +142,11 @@ const Layout = ({ children }) => {
     };
   });
 
+  const toggleNav = () => {
+    let navBar = document.querySelector('nav');
+    navBar.style.display = navBar.style.display === "none" ? "block" : "none";
+  }
+
   return (
     <>
       
@@ -150,8 +155,19 @@ const Layout = ({ children }) => {
             id="gameOfLife"
             ref={canvasRef}
           ></canvas> 
-          <Logo className="portrait" />
+        <Logo className="portrait" />
       </header>
+        <div id="navMenu">
+          <span id="navToggle" role="Menu" onClick={toggleNav}>></span>
+          <nav>
+            <ul>
+              <li>Contact</li>
+              <li>Blog</li>
+              <li>Projects</li>
+              <li>Art</li>
+            </ul>
+          </nav>
+        </div>
       <main>{children}</main>
       <footer>
         <ul>
