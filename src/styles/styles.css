@@ -15,12 +15,14 @@ body {
 
 html {
   font-family: sans-serif;
+  overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,9 +30,30 @@ body {
 header {
   width: 100%;
   height: 65vw;
-  max-height: 650px;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  max-height: 800px;
+  z-index: 0;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header > svg {
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
 }
 
 main > * {
@@ -48,10 +71,8 @@ main > * {
   width: 50vw;
   max-width: 440px;
   height: auto;
-  position: absolute;
-  top: 3vw;
   left: calc(50vw - min(25vw,220px));
-  margin-top: 0;
+  margin-top: 5vw;
   z-index: 10;
 }
 
@@ -135,6 +156,12 @@ footer ul {
   cursor: pointer;
 }
 
+@media only screen and (min-width: 1020px) {
+  #navToggle {
+    display: none;
+  }
+}
+
 nav {
   display: none;
   list-style: none;
@@ -154,8 +181,24 @@ nav > ul > li {
   width: 250px;
 }
 
-nav > ul > li::hover {
+nav > ul > li:hover {
   text-decoration: underline;
+}
+
+@media only screen and (min-width: 1020px) {
+  nav {
+    display: block;
+    width: 100%;
+  }
+  nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 #navMenu {
@@ -167,11 +210,21 @@ nav > ul > li::hover {
       -ms-flex-align: start;
           align-items: flex-start;
   top: 50vw;
+  z-index: 5;
+  width: 100%;
 }
 
 @media only screen and (min-width: 1020px) {
   #navMenu {
-    top: 510px;
+    position: unset;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

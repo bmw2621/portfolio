@@ -156,7 +156,6 @@ const Layout = ({ children }) => {
             ref={canvasRef}
           ></canvas> 
         <Logo className="portrait" />
-      </header>
         <div id="navMenu">
           <span id="navToggle" role="Menu" onClick={toggleNav}>></span>
           <nav>
@@ -168,6 +167,7 @@ const Layout = ({ children }) => {
             </ul>
           </nav>
         </div>
+      </header>
       <main>{children}</main>
       <footer>
         <ul>
