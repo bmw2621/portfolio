@@ -36,15 +36,6 @@ const buildGrid = (COLS, ROWS) => {
 }
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   const images = useStaticQuery(graphql`
     query SocialMediaImagesQuery {

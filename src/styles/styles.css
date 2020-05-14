@@ -18,6 +18,7 @@ html {
   overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 1.3rem;
 }
 
 body {
@@ -56,15 +57,72 @@ header > svg {
           transform: skewY(6deg);
 }
 
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .skills {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .skills > * {
+  margin: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main > * {
   max-width: 1120px;
-  margin: 0 10px;
+  margin: 20px 10px;
 }
 
 @media only screen and (min-width: 1120px) {
   main > * {
     margin-left: calc(50vw - 560px);
   }
+}
+
+.skillImage {
+  width: 33vw;
+  min-width: 160px;
+  max-width: 250px;
+  height: 33vw;
+  min-height: 160px;
+  max-height: 250px;
+  border-radius: 50%;
 }
 
 .portrait {
@@ -150,6 +208,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 20px;
 }
 
 footer ul {

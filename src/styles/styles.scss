@@ -22,6 +22,7 @@ html {
   overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 1.3rem;
 }
 body {
   margin: 0;
@@ -48,13 +49,41 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .skills{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > * {
+      margin: 2vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   &>*{
     max-width: 1120px;
-    margin: 0 10px;
+    margin: 20px 10px;
     @media only screen and (min-width: 1120px){
       margin-left: calc(50vw - 560px);
     }
   }
+}
+
+.skillImage {
+  width: 33vw;
+  min-width: 160px;
+  max-width: 250px;
+  height: 33vw;
+  min-height: 160px;
+  max-height: 250px;
+  border-radius: 50%;
 }
 
 .portrait {
@@ -124,6 +153,7 @@ footer {
   background: $color4;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
   ul {
     list-style: none;
     display: flex;
