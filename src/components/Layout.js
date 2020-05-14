@@ -8,9 +8,13 @@
 import React, { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import "../styles/styles.css"
 import Logo from "../images/me2.svg"
+
+// import fbIcon from "../images/facebookIcon.png"
+// import liIcon from "../images/linkedinIcon.png"
 
 const getPixelRatio = context => {
     var backingStore =
@@ -32,16 +36,32 @@ const buildGrid = (COLS, ROWS) => {
 }
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+
+  const images = useStaticQuery(graphql`
+    query SocialMediaImagesQuery {
+      allFile(filter: {name: {in: ["facebookIcon","linkedinIcon","githubIcon","twitterIcon"]}}) {
+        nodes {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
         }
       }
     }
   `)
 
+  console.log(images)
   const canvasRef = useRef(null)
 
   const nextGen = (grid, COLS, ROWS) => {
@@ -126,7 +146,7 @@ const Layout = ({ children }) => {
 
               ctx.beginPath();
               ctx.rect(col * resolution, row * resolution, resolution, resolution);
-              ctx.fillStyle = cell ? '#12343bff' : '#103037ff'
+              ctx.fillStyle = cell ? '#0D3942ff' : '#103037ff'
               ctx.fill()
             }
           }
@@ -144,8 +164,25 @@ const Layout = ({ children }) => {
 
   const toggleNav = () => {
     let navBar = document.querySelector('nav');
-    navBar.style.display = navBar.style.display === "none" ? "block" : "none";
+    navBar.style.display = navBar.style.display === "block" ? "none" : "block";
   }
+
+  const socialHref = name => {
+    switch(name){
+      case "facebookIcon":
+        return "https://www.facebook.com/benjamin.winchester";
+      case "githubIcon":
+        return "https://www.github.com/bmw2621";
+      case "twitterIcon":
+        return "https://www.twitter.com/b_m_winchester"
+      case "linkedinIcon":
+        return "https://www.linkedin.com/in/benjamin-m-winchester"
+      default:
+        return "/";
+    }
+  }
+
+  
 
   return (
     <>
@@ -171,9 +208,18 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <footer>
         <ul>
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>Github</li>
+        {images.allFile.nodes.map(img => (
+          <li>
+            <a href={socialHref(img.name)}>
+              <Img
+                fluid={img.childImageSharp.fluid}
+                alt="Social Media Icon"
+                className="socialIcon"
+              />
+            </a>
+          </li>))}
+          {/* <li><a href="https://www.facebook.com/sophiedaniellewinchester"><img alt="Facebook Icon" className="socialIcon" src={fbIcon}></img></a></li>
+          <li><a href="https://www.linkedin.com/in/sophie-winchester-190a8312b"><img alt="LinkedIn Icon" className="socialIcon" src={liIcon}></img></a></li> */}
         </ul>
       </footer>
     </>

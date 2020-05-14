@@ -122,8 +122,12 @@ text {
 footer {
   color: $color5;
   background: $color4;
+  display: flex;
+  justify-content: center;
   ul {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -178,6 +182,20 @@ nav {
     display: flex;
     justify-content: center;
     
+  }
+}
+
+.socialIcon{
+  height: 10vw;
+  width: 10vw;
+  max-width: 130px;
+  max-height: 130px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+  &:hover{
+    transform: rotate(360deg);
+    opacity: 1;
   }
 }
 
