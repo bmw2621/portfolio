@@ -109,12 +109,6 @@ main > * {
   margin: 20px 10px;
 }
 
-@media only screen and (min-width: 1120px) {
-  main > * {
-    margin-left: calc(50vw - 560px);
-  }
-}
-
 .skillImage {
   width: 33vw;
   min-width: 160px;
