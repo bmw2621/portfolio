@@ -10,7 +10,9 @@ const skills = {
     ["HTML","htmlIcon"],
     ["Javascript","javascriptIcon"],
     ["CSS","cssIcon"],
-    ["SASS","sassIcon"]
+    ["SASS","sassIcon"],
+    ["ReactJS", "reactIcon"],
+    ["GatsbyJS", "gatsbyIcon"]
   ],
   "backend": [
     ["NodeJS","nodeJSIcon"],

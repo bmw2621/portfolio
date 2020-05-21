@@ -35,6 +35,13 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: "gatsby-source-dev",
+      options: {
+        // This is your username on Dev.to
+        username: 'bmw2621'
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

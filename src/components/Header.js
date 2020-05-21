@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react"
+import { Link } from 'gatsby'
 
 import Logo from "../images/me2.svg"
 
@@ -139,8 +140,8 @@ const Header = () => {
           <span id="navToggle" role="Menu" onClick={toggleNav}>></span>
           <nav>
             <ul>
-              <li>Contact</li>
-              <li>Blog</li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
               <li>Projects</li>
               <li>Art</li>
             </ul>
