@@ -135,7 +135,7 @@ const Header = () => {
             id="gameOfLife"
             ref={canvasRef}
           ></canvas> 
-        <Logo className="portrait" />
+        <Link to="/"><Logo className="portrait" /></Link>
         <div id="navMenu">
           <span id="navToggle" role="Menu" onClick={toggleNav}>></span>
           <nav>

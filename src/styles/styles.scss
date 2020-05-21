@@ -44,7 +44,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  & > svg {
+  & > a > svg {
     transform: skewY(6deg);
   }
 }

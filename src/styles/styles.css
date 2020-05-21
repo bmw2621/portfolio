@@ -53,7 +53,7 @@ header {
           justify-content: space-between;
 }
 
-header > svg {
+header > a > svg {
   -webkit-transform: skewY(6deg);
           transform: skewY(6deg);
 }
