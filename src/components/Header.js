@@ -1,9 +1,5 @@
 import React, { useRef, useEffect } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
-import "../styles/styles.css"
 import Logo from "../images/me2.svg"
 
 const getPixelRatio = context => {
@@ -27,22 +23,6 @@ const buildGrid = (COLS, ROWS) => {
 
 const Header = () => {
 
-  const images = useStaticQuery(graphql`
-    query SocialMediaImagesQuery2 {
-      allFile(filter: {name: {in: ["facebookIcon","linkedinIcon","githubIcon","twitterIcon"]}}) {
-        nodes {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          name
-        }
-      }
-    }
-  `)
-
-  console.log(images)
   const canvasRef = useRef(null)
 
   const nextGen = (grid, COLS, ROWS) => {
@@ -146,21 +126,6 @@ const Header = () => {
   const toggleNav = () => {
     let navBar = document.querySelector('nav');
     navBar.style.display = navBar.style.display === "block" ? "none" : "block";
-  }
-
-  const socialHref = name => {
-    switch(name){
-      case "facebookIcon":
-        return "https://www.facebook.com/benjamin.winchester";
-      case "githubIcon":
-        return "https://www.github.com/bmw2621";
-      case "twitterIcon":
-        return "https://www.twitter.com/b_m_winchester"
-      case "linkedinIcon":
-        return "https://www.linkedin.com/in/benjamin-m-winchester"
-      default:
-        return "/";
-    }
   }
 
   return (
