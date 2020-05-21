@@ -142,8 +142,8 @@ const Header = () => {
             <ul>
               <li><Link to="/contact">Contact</Link></li>
               <li><Link to="/blog">Blog</Link></li>
-              <li>Projects</li>
-              <li>Art</li>
+              <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/art">Art</Link></li>
             </ul>
           </nav>
         </div>
