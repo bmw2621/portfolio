@@ -14,6 +14,7 @@ body {
 }
 
 html {
+  width: 100%;
   font-family: sans-serif;
   overflow-x: hidden;
   -ms-text-size-adjust: 100%;
@@ -77,6 +78,7 @@ main {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
   max-width: 1000px;
 }
 
@@ -358,7 +360,11 @@ nav > ul > li:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  margin: 3vw 3vh;
+  width: 90%;
+  padding: 20px;
+  -webkit-box-shadow: 10px 10px 30px gray;
+          box-shadow: 10px 10px 30px gray;
 }
 
 .article > .articleData > span > svg > path {
@@ -386,6 +392,10 @@ nav > ul > li:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 20px;
 }
 
 .blogTitle {

@@ -31,7 +31,7 @@ const BlogPage = () => {
         const articleDate = new Date(Date.parse(article.article.published_at))
         return(
           <a href={article.article.url} className="article">
-            <div className="articleIcon"><FontAwesomeIcon icon={faDev} size='5x' /></div>
+            <div className="articleIcon"><FontAwesomeIcon icon={faDev} size='3x' /></div>
             <div className="articleData">
               <span className='blogTitle'>{article.article.title}</span>
               <span className='blogDate'>{`${articleDate.toDateString()}`}</span>
