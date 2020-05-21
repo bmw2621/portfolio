@@ -130,7 +130,7 @@ const Header = () => {
   }
 
   return (
-      <header>
+      <header style={{"position":"relative","zIndex":"999"}}>
         <canvas
             id="gameOfLife"
             ref={canvasRef}
