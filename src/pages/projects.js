@@ -1,10 +1,6 @@
 import React from "react";
-import ProjectCard from '../components/ProjectCard'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import Img from "gatsby-image"
-
-
+import ProjectCard from '../components/ProjectCard';
+import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -17,7 +13,7 @@ const projects = [
     liveURL: "https://www.sophiewinchester.com"
   },
   {
-    title: "Dungeons & Gragons GraphQL API",
+    title: "Dungeons & Dragons GraphQL API",
     description: "Converted DND5e API (RESTful) to a GraphQL. Pythons scipts create SQLite database from MongoDB instance, to support GraphQL schema.",
     img: "dnd5eGQL.jpg",
     codeURL: "https://www.github.com/bmw2621/dnd5eGQL",
@@ -68,13 +64,26 @@ const projects = [
 ]
 
 const ProjectsPage = () => {
+      
+    const images = useStaticQuery(graphql`
+        query MyQuery {
+            allImageSharp {
+                nodes {
+                    fluid {
+                        originalName
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
  
   return (
     <Layout>
       <SEO title="Projects" />
       <h1>Projects</h1>
       <div className="projectCards">
-        {projects.map(project => <ProjectCard data={project} />)}      
+        {projects.map(project => <ProjectCard data={project} images={images}/>)}      
       </div>
     </Layout>
   )

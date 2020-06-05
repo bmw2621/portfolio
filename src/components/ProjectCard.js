@@ -1,25 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 const ProjectCard = (props) => {
     const {title, description, img, liveURL, codeURL} = props.data
    
-    
-    const images = useStaticQuery(graphql`
-        query MyQuery {
-            allImageSharp {
-                nodes {
-                    fluid {
-                        originalName
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-    `)
-
-    const cardImage = images.allImageSharp.nodes.filter(i => i.fluid.originalName === img)[0]
+    const cardImage = props.images.allImageSharp.nodes.filter(i => i.fluid.originalName === img)[0]
     
     return (
         <div className="projectCard" style={{}}>
