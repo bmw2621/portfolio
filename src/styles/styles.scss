@@ -343,6 +343,40 @@ nav {
   
 }
 
+.modalBG {
+  display: none;
+  position: absolute;
+  z-index: 100000;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.modal {
+  width: 70vw;
+  background: white;
+  border-radius: 8px;
+  padding: 50px;
+  position: absolute;
+  box-shadow: 0 0 50px black;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.closeModal {
+  width: 40px;
+  height: 40px;
+  background: $color4;
+  color: $color5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  top: -70px;
+  left: -70px;
+}
+
 @keyframes titleNameRotation {
   from{transform: rotate(-100deg);}
   to{transform: rotate(0deg);}

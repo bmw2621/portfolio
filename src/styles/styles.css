@@ -488,6 +488,49 @@ nav > ul > li:hover {
           justify-content: center;
 }
 
+.modalBG {
+  display: none;
+  position: absolute;
+  z-index: 100000;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.modal {
+  width: 70vw;
+  background: white;
+  border-radius: 8px;
+  padding: 50px;
+  position: absolute;
+  -webkit-box-shadow: 0 0 50px black;
+          box-shadow: 0 0 50px black;
+  top: -2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.closeModal {
+  width: 40px;
+  height: 40px;
+  background: #12343bff;
+  color: #fbfbfbff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  top: -70px;
+  left: -70px;
+}
+
 @-webkit-keyframes titleNameRotation {
   from {
     -webkit-transform: rotate(-100deg);
