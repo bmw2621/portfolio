@@ -82,7 +82,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <h1>Web Developer</h1>
       <h2>About Me</h2>
-      <p>I am a full stack web developer who loves to build stuff.  I am an 11 year veteran of the US Army who learned frontend development from <a href="www.vetswhocode.io">#VetsWhoCode</a>, and am passionate about teaching others to pursue there dream and learn to code.  I host the #VetsWhoCode podcast, and want to help others any way I can.</p>
+      <p>I am a developer with a focus on javascript, python and java, utilizing their ecosystems for product development, Big Data and and general software engineering practices. I am an 11 year veteran of the US Army who learned frontend development from <a href="www.vetswhocode.io" style={{"fontStyle":"italic", "color":"gray"}}>#VetsWhoCode</a>, and am passionate about teaching others, helping them to pursue their dream and learn to code.  I host the <a href="https://www.youtube.com/channel/UCHwFYu0jrPPghE2SFGqricQ" style={{"fontStyle":"italic", "color":"gray"}}>#VetsWhoCode Podcast</a>, and want to help others any way I can.</p>
       <h2>Skills</h2>
       <h3>Frontend Development</h3>
       <div className="skills">{skillDivs(skills.frontend, images.allFile.nodes)}</div>

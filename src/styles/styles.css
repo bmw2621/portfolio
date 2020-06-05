@@ -348,6 +348,20 @@ nav > ul > li:hover {
           justify-content: center;
 }
 
+.contactType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .contactType > a:hover {
   text-decoration: underline;
 }
@@ -412,6 +426,66 @@ nav > ul > li:hover {
 .blogDate {
   font-style: italic;
   font-size: .8rem;
+}
+
+.projectCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projectCard {
+  width: 40%;
+  max-width: 500px;
+  min-width: 270px;
+  margin: 10px;
+  border: 1px solid #CCC;
+  padding: 0 20px 20px 20px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.projectButtons {
+  width: 100%;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projectButton {
+  margin: 10px;
+  padding: 5px;
+  width: 150px;
+  background: #12343bff;
+  color: #fbfbfbff;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @-webkit-keyframes titleNameRotation {
