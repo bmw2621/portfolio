@@ -73,7 +73,6 @@ const ProjectsPage = () => {
     <Layout>
       <SEO title="Projects" />
       <h1>Projects</h1>
-      <h2>Under Construction</h2>
       <div className="projectCards">
         {projects.map(project => <ProjectCard data={project} />)}      
       </div>
