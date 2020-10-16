@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   const images = useStaticQuery(graphql`
     query SocialMediaImagesQuery {
-      allFile(filter: {name: {in: ["facebookIcon","linkedinIcon","githubIcon","twitterIcon","twitchIcon","youtubeIcon"]}}) {
+      allFile(filter: {name: {in: ["linkedinIcon","githubIcon","twitterIcon","twitchIcon","youtubeIcon"]}}) {
         nodes {
           childImageSharp {
             fluid {
@@ -25,8 +25,6 @@ const Layout = ({ children }) => {
 
   const socialHref = name => {
     switch(name){
-      case "facebookIcon":
-        return "https://www.facebook.com/benjamin.winchester";
       case "githubIcon":
         return "https://www.github.com/bmw2621";
       case "twitterIcon":
