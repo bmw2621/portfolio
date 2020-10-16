@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   const images = useStaticQuery(graphql`
     query SocialMediaImagesQuery {
-      allFile(filter: {name: {in: ["facebookIcon","linkedinIcon","githubIcon","twitterIcon"]}}) {
+      allFile(filter: {name: {in: ["facebookIcon","linkedinIcon","githubIcon","twitterIcon","twitchIcon","youtubeIcon"]}}) {
         nodes {
           childImageSharp {
             fluid {
@@ -33,16 +33,20 @@ const Layout = ({ children }) => {
         return "https://www.twitter.com/b_m_winchester"
       case "linkedinIcon":
         return "https://www.linkedin.com/in/benjamin-m-winchester"
+      case "twitchIcon":
+        return "https://www.twitch.tv/bmw2621"
+      case "youtubeIcon":
+        return "https://www.youtube.com/channel/UCbSJ_HmTa-uGBl5nn-6BMxA?view_as=subscriber"
       default:
         return "/";
     }
   }
 
-  
+
 
   return (
     <>
-      
+
       <Header />
       <main>{children}</main>
       <footer>
