@@ -20,14 +20,18 @@ const BlogPage = () => {
           }
         }
       }
-    }   
+    }
   `)
- 
+
   return (
     <Layout>
       <SEO title="Blog" />
       <h1>Blog</h1>
-      {posts.allDevArticles.nodes.map(article => {
+      {posts
+          .allDevArticles
+          .nodes.sort(
+            (a, b) => (Date.parse(a.articleDate) > Date.parse(b.articleDate)) ? 1 : -1
+          ).map(article => {
         const articleDate = new Date(Date.parse(article.article.published_at))
         return(
           <a href={article.article.url} className="article">
@@ -39,7 +43,7 @@ const BlogPage = () => {
             </div>
           </a>
         )
-      })}  
+      })}
     </Layout>
   )
 }
